@@ -1,9 +1,6 @@
 package ua.start.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,12 +10,13 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @ToString
+@EqualsAndHashCode
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
     private String car;
-    @OneToMany(targetEntity = Description.class,cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
+    @OneToMany(targetEntity = Description.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private List<Description> descriptions;
 
     public Car(String car, List<Description> descriptions) {

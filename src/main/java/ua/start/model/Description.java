@@ -1,9 +1,6 @@
 package ua.start.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,10 +12,11 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 @ToString
+@EqualsAndHashCode
 public class Description {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
     private int price;
     private String color;
     private String model;

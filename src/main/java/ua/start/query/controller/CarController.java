@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.start.model.Car;
 import ua.start.model.Description;
-import ua.start.query.impl.CarsServiceImpl;
+import ua.start.query.CarService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class ControllerImpl {
+public class CarController {
 
     @Autowired
-    private CarsServiceImpl carsService;
+    private CarService carsService;
 
     private List<Description> descriptions = new ArrayList<>();
 
@@ -47,14 +47,9 @@ public class ControllerImpl {
         return "goodsList";
     }
 
-    @RequestMapping(value = "/search",method = RequestMethod.GET)
-    public String showSearch(){
-        return "search";
-    }
-
-    @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public String search(@RequestParam(value = "name",required = false) String name,Model model) {
-        model.addAttribute("result",carsService.findByCar(name));
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(@RequestParam(value = "name", required = false) String name, Model model) {
+        model.addAttribute("result", carsService.findByCar(name));
         return "search";
     }
 }
