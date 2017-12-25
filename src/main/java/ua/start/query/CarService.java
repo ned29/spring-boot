@@ -6,13 +6,11 @@ import ua.start.model.Car;
 
 import java.util.List;
 
-@Service
-@Transactional
 public interface CarService {
 
     Car save(Car car);
 
     Iterable<Car> findAll();
 
-    List<Car> findByCar(String carName);
+   // List<Car> findByCar(String carName);
 }
