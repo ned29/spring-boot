@@ -1,6 +1,7 @@
 package ua.start.query.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,24 +13,24 @@ import java.util.List;
 
 @Service
 @Transactional
-public class CarsServiceImpl{// implements CarService {
+public class CarsServiceImpl implements CarService{
 
     @Autowired
+    @Qualifier("carRepository")
     private TypeRepository<Car> carRepository;
 
-   // @Override
+    @Override
     public Car save(Car car) {
-         carRepository.save(car);
-         return car;
+        return carRepository.save(car);
     }
 
-  //  @Override
+    @Override
     public Iterable<Car> findAll() {
         return carRepository.findAll();
     }
 
-//    @Override
-//    public List<Car> findByCar(String car) {
-//        return carRepository.findByAttribute(car);
-//    }
+    @Override
+    public List<Car> findByCar(String car) {
+        return carRepository.findByAttribute(car);
+    }
 }
