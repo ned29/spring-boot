@@ -1,6 +1,7 @@
 package ua.start.query.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -11,18 +12,15 @@ import ua.start.query.UserService;
 
 import java.util.List;
 
-@Service
-@Transactional
-public class UserServiceImpl{// implements UserService{
+@Component
+public class UserServiceImpl implements UserService{
 
-//    @Autowired
-//    private TypeRepository<User> userRepository;
-//
-//    @Autowired
-//    private UserService userService;
+    @Autowired
+    @Qualifier("typeRepository")
+    private TypeRepository<User> userRepository;
 
-//    @Override
-//    public List<User> findByLogin(String login) {
-//        return userRepository.findByAttribute(login);
-//    }
+    @Override
+    public List<User> findByLogin(String login) {
+        return userRepository.findByAttribute(login);
+    }
 }
