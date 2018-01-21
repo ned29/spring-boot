@@ -14,10 +14,13 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String car;
+
     @OneToMany(targetEntity = Description.class,cascade = {CascadeType.ALL},fetch = FetchType.EAGER)
     private List<Description> descriptions;
 

@@ -1,16 +1,15 @@
-package ua.start.query.impl;
+package ua.start.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Component;
 import ua.start.model.Car;
-import ua.start.query.CarRepository;
+import ua.start.service.repository.CarRepository;
+import ua.start.service.CarService;
 
 import java.util.List;
 
-@Service
-@Transactional
-public class CarsServiceImpl {
+@Component
+public class CarsServiceImpl implements CarService{
 
     @Autowired
     private CarRepository carRepository;

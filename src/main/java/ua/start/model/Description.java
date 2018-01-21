@@ -16,11 +16,15 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @ToString
 public class Description {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private int price;
+
     private String color;
+
     private String model;
 
     public Description(int price, String color, String model) {

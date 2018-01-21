@@ -14,9 +14,12 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String login;
+
     private String password;
 }

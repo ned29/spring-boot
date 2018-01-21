@@ -1,4 +1,4 @@
-package ua.start.query;
+package ua.start.service.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

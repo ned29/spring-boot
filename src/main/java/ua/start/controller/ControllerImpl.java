@@ -1,4 +1,4 @@
-package ua.start.query.controller;
+package ua.start.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.start.model.Car;
 import ua.start.model.Description;
-import ua.start.query.impl.CarsServiceImpl;
+import ua.start.service.CarService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
 public class ControllerImpl {
 
     @Autowired
-    private CarsServiceImpl carsService;
+    private CarService carsService;
 
     private List<Description> descriptions = new ArrayList<>();
 
