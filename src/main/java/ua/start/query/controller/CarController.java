@@ -50,7 +50,7 @@ public class CarController {
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String search(@RequestParam(value = "name", required = false) String name, Model model) {
-        model.addAttribute("result", carsService.findByCar(name));
+       // model.addAttribute("result", carsService.findByCar(name));
         return "search";
     }
 }

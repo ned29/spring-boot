@@ -12,10 +12,13 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     private String car;
+
     @OneToMany(targetEntity = Description.class, cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private List<Description> descriptions;
 

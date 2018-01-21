@@ -9,5 +9,5 @@ import java.util.List;
 @Service
 @Transactional
 public interface UserService {
-    List<User> findByLogin(String login);
+   // List<User> findByLogin(String login);
 }

@@ -14,11 +14,15 @@ import javax.persistence.Id;
 @ToString
 @EqualsAndHashCode
 public class Description {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     private int price;
+
     private String color;
+
     private String model;
 
     public Description(int price, String color, String model) {

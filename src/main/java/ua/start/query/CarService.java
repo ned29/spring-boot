@@ -14,5 +14,5 @@ public interface CarService {
 
     Iterable<Car> findAll();
 
-    List<Car> findByCar(String carName);
+   // List<Car> findByCar(String carName);
 }

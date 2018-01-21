@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.start.model.User;
 import ua.start.query.TypeRepository;
+import ua.start.query.UserRepository;
 import ua.start.query.UserService;
 
 import java.util.List;
@@ -16,11 +17,10 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    @Qualifier("typeRepository")
-    private TypeRepository<User> userRepository;
+    private UserRepository userRepository;
 
-    @Override
-    public List<User> findByLogin(String login) {
-        return userRepository.findByAttribute(login);
-    }
+//    @Override
+//    public List<User> findByLogin(String login) {
+//        return userRepository.findByAttribute(login);
+//    }
 }
