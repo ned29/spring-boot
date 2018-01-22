@@ -47,14 +47,11 @@ public class ControllerImpl {
         return "goodsList";
     }
 
-    @RequestMapping(value = "/search",method = RequestMethod.GET)
-    public String showSearch(){
-        return "search";
-    }
-
-    @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public String search(@RequestParam(value = "name",required = false) String name,Model model) {
-        model.addAttribute("result",carsService.findByCar(name));
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(@RequestParam(value = "name", required = false) String name, Model model) {
+        List<Car> cars = null;
+        cars = carsService.findByCar(name);
+        model.addAttribute("result", cars);
         return "search";
     }
 }

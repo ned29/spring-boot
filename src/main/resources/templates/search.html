@@ -6,13 +6,11 @@
 </head>
 <body>
 <h1>Enter data</h1>
-<form th:action="@{/search}" th:object="${result}" method="post">
+<form action="#" th:action="@{/search}"  th:object="${name}"  method="get">
     Value:
-    <input    type="text" th:value="*{name}"/>
+    <input    type="text"/>
     <br/>
     <input type="submit" value="Search"/>
-
-
 <div>
     <table border="1">
         <tr>
@@ -21,8 +19,8 @@
             <th>Model</th>
             <th>Color</th>
         </tr>
-        <tr th:each="result : ${goods}">
-            <td th:utext="${good.car}">...</td>
+        <tr th:each="name : ${name}">
+            <td th:utext="${name.car}">...</td>
             <div th:each="des : ${good.descriptions}">
                 <td th:utext="${des.price}">...</td>
                 <td th:utext="${des.model}">...</td>
