@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Search</title>
+</head>
+<body>
+<h1>Enter data</h1>
+<form action="#" th:action="@{/search}"  th:object="${name}"  method="get">
+    Value:
+    <input    type="text"/>
+    <br/>
+    <input type="submit" value="Search"/>
+<div>
+    <table border="1">
+        <tr>
+            <th>Car</th>
+            <th>Price</th>
+            <th>Model</th>
+            <th>Color</th>
+        </tr>
+        <tr th:each="name : ${name}">
+            <td th:utext="${name.car}">...</td>
+            <div th:each="des : ${good.descriptions}">
+                <td th:utext="${des.price}">...</td>
+                <td th:utext="${des.model}">...</td>
+                <td th:utext="${des.color}">...</td>
+            </div>
+        </tr>
+    </table>
+</div>
+<br/>
+</form>
+</body>
+</html>
